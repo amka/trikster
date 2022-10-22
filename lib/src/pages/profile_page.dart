@@ -12,13 +12,13 @@ class ProfilePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Profile'),
+        title: const Text('Profile'),
         backgroundColor: Colors.transparent,
         foregroundColor: Colors.grey[900],
         elevation: 0,
         leading: IconButton(
           onPressed: () => context.goNamed('dashboard'),
-          icon: Icon(Icons.arrow_back),
+          icon: const Icon(Icons.arrow_back),
         ),
       ),
       backgroundColor: const Color(0xfff6fafd),
@@ -26,8 +26,8 @@ class ProfilePage extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.all(16.0),
           child: Column(
-            children: [
-              const Expanded(
+            children: const [
+              Expanded(
                 child: Center(
                   child: Text('Profile'),
                 ),
