@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 import 'avatar.dart';
 
@@ -11,8 +12,11 @@ class HeaderBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        const Avatar(
-          email: 'meamka@ya.ru',
+        GestureDetector(
+          onTap: () => context.goNamed('profile'),
+          child: const Avatar(
+            email: 'meamka@ya.ru',
+          ),
         ),
         Expanded(
           child: Padding(

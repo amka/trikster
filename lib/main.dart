@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'src/pages/dashboard_page.dart';
+import 'src/router.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,13 +12,13 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
+    return MaterialApp.router(
+      title: 'Trikster',
       theme: ThemeData(
         primarySwatch: Colors.blue,
-        primaryColor: Color.fromARGB(255, 13, 88, 163),
+        primaryColor: const Color(0xFF0D58A3),
       ),
-      home: const DashboardPage(),
+      routerConfig: router,
     );
   }
 }
