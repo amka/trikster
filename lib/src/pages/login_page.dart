@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:line_icons/line_icons.dart';
+
+import '../components/social_signin_button.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
@@ -21,33 +25,21 @@ class LoginPage extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 24),
-              SizedBox(
-                height: 48,
-                child: MaterialButton(
-                  onPressed: () {},
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: const [
-                      Icon(Icons.apple),
-                      SizedBox(width: 8),
-                      Text('Sign in with Apple'),
-                    ],
-                  ),
-                ),
+              SocialSignInButton(
+                icon: const Icon(LineIcons.apple),
+                title: 'Sign in with Apple',
+                onPressed: () {
+                  print('Signed with Apple');
+                  context.goNamed('dashboard');
+                },
               ),
-              SizedBox(
-                height: 48,
-                child: MaterialButton(
-                  onPressed: () {},
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: const [
-                      Icon(Icons.golf_course),
-                      SizedBox(width: 8),
-                      Text('Sign in with Google'),
-                    ],
-                  ),
-                ),
+              SocialSignInButton(
+                icon: const Icon(LineIcons.googleLogo),
+                title: 'Sign in with Google',
+                onPressed: () {
+                  print('Signed with Google');
+                  context.goNamed('dashboard');
+                },
               )
             ],
           ),
